@@ -5,7 +5,7 @@ export default function Home() {
 
   const handleClick = (choice) => {
     if (choice === 'Excellent') {
-      router.push('https://g.page/r/YOUR_GOOGLE_REVIEW_LINK');
+      router.push('https://g.page/r/CfUEqnx32dY5EBM/review');
     } else {
       router.push('/feedback');
     }
