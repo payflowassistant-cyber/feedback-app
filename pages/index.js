@@ -1,22 +1,37 @@
-import { useRouter } from 'next/router';
-
 export default function Home() {
-  const router = useRouter();
-
   const handleClick = (choice) => {
     if (choice === 'Excellent') {
-      router.push('https://g.page/r/CfUEqnx32dY5EBM/review');
+      window.location.href = 'https://g.page/r/YOUR_GOOGLE_REVIEW_LINK';
     } else {
-      router.push('/feedback');
+      window.location.href = '/feedback';
     }
   };
 
   return (
-    <div style={{ textAlign: 'center', marginTop: '50px' }}>
-      <h1>How was your experience?</h1>
-      <button onClick={() => handleClick('Excellent')}>Excellent</button>
-      <button onClick={() => handleClick('Good')}>Good</button>
-      <button onClick={() => handleClick('Needs Improvement')}>Needs Improvement</button>
+    <div className="flex items-center justify-center h-screen bg-gray-100">
+      <div className="bg-white p-8 rounded-xl shadow-lg text-center">
+        <h1 className="text-2xl font-bold mb-6">How was your experience?</h1>
+        <div className="space-y-4">
+          <button
+            onClick={() => handleClick('Excellent')}
+            className="w-full py-3 bg-green-500 text-white rounded-lg hover:bg-green-600"
+          >
+            🌟 Excellent
+          </button>
+          <button
+            onClick={() => handleClick('Good')}
+            className="w-full py-3 bg-yellow-500 text-white rounded-lg hover:bg-yellow-600"
+          >
+            🙂 Good
+          </button>
+          <button
+            onClick={() => handleClick('Needs Improvement')}
+            className="w-full py-3 bg-red-500 text-white rounded-lg hover:bg-red-600"
+          >
+            😟 Needs Improvement
+          </button>
+        </div>
+      </div>
     </div>
   );
 }
